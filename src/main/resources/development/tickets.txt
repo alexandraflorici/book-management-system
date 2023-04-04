@@ -1,0 +1,79 @@
+BMS-1 Setup Hibernate
+BMS-2 Setup utility class
+BMS-3 Create Hibernate Model
+BMS-4 Create Infrastructure for user Menu
+BMS-5 Create abstract and generic repository
+
+BMS-6 -As a user, I should be able to add a new Author into the system;
+    I should be able to specify the following data:
+        - first name of the new author; given data should not be empty or blank or shouldn't contain digits
+        - last name of the new author; given data should not be empty or blank or shouldn't contain digits
+    For any validation problem found, the user will be prompted with a message
+
+BMS-7 -As a user, I should be able to view the whole list of authors existing in the system;
+    Each line will contain author id, author first name and author last name
+    If no author is found in the system, the user will be prompted with a message
+
+BMS-8 -As user, I should be able to delete an author from the list of authors existing in the system;
+    I should be able to specify the following data:
+        -id of the author should be deleted; given data should be positive numeric value and different from 0
+    If the provided author id does not exist in the system, the user will be prompted with a message
+
+BMS-9 -As user, I should be able to update authors existing on the system;
+    I should be able to specify the following data:
+          -id of the author should be updated; given data should be positive numeric value and different from 0
+          - first name of the new author; given data should not be empty or blank or shouldn't contain digits
+          - last name of the new author; given data should not be empty or blank or shouldn't contain digits
+    If the provided author id does not exist in the system, the user will be prompted with a message
+
+BMS-10 -As a user, I should be able to add a new Book into the system;
+    I should be able to specify the following data:
+        - title of the new book; given data should not be empty or blank
+        - description of the new book; given data should not be empty or blank
+        - author id of the new book; given data should be positive numeric value and different from 0
+    If the provided author id does not exist in the system, the user will be prompted with a message
+    For any validation problem found, the user will be prompted with a message
+
+BMS-11 -As a user, I should be able to view the whole list of books existing in the system;
+    Each line will contain id of the book, title of the book, first name of the author and last name of the author;
+    If no author is found in the system, the user will be prompted with a message
+
+BMS-12 -As a user, I should be able to view all the details for a given book;
+    I should be able to specify the following data:
+        -id of the book; given data should be positive numeric value and different from 0
+    If the provided book id is found, the user will be able to view the following data:
+        -id of the book
+        -title of the book
+        -description of the book
+        -id of the author
+        -first name of the author
+        -last name of the author
+    If the provided author id does not exist in the system, the user will be prompted with a message
+    For any validation problem found, the user will be prompted with a message
+
+BMS-13 - As a user, I should be able to delete a book from the list of books existing in the system;
+    I should be able to specify the following data:
+        - id of the book that should be deleted; given data should be positive numeric value and different from 0
+    If the provided book id does not exist in the system, the user will be prompted with a message
+
+BMS-14 - As a user, I should be able to update an existing book;
+    I should be able to specify the following data:
+        - id of the book that should be updated; given data should be positive numeric value and different from 0
+        - title of the book; given data should not be empty or blank
+        - description of the book; given data should not be empty or blank
+    If the provided book id does not exist in the system, the user will be prompted with a message
+
+BMS-15 - As a user, I should be able to add a new Review into the system;
+    I should be able to specify the following data:
+        - id of the book for which we create the review; given data should be positive numeric value and different from 0
+        - score for the specified book; given data should be positive numeric value and between 1 and 5
+        - comment for the specified book; given data should not be empty or blank
+    If the provided book id does not exist in the system, the user will be prompted with a message
+    For any validation problem found, the user will be prompted with a message
+
+BMS-16 - As a user, I should be able to view the whole list of reviews of a book existing in the system;
+    I should be able to specify the following data:
+        - id of the book; given data should be positive numeric value and different from 0
+    Each line will contain title of the book, score of the book review and comment of the book review;
+    If no book is found in the system, the user will be prompted with a message
+    For any validation problem found, the user will be prompted with a message

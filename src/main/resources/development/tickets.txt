@@ -1,5 +1,5 @@
 Done BMS-1 Setup Hibernate
-BMS-2 Setup utility class
+Done BMS-2 Setup utility class
 BMS-3 Create Hibernate Model
 BMS-4 Create Infrastructure for user Menu
 BMS-5 Create abstract and generic repository

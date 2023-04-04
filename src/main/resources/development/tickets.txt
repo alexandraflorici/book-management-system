@@ -1,4 +1,4 @@
-BMS-1 Setup Hibernate
+Done BMS-1 Setup Hibernate
 BMS-2 Setup utility class
 BMS-3 Create Hibernate Model
 BMS-4 Create Infrastructure for user Menu

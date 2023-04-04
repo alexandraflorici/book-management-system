@@ -1,0 +1,13 @@
+Book management system:
+Java Desktop Application used for managing a library
+One window for CRUD operations on Author (firstname, lastname):
+-allows the viewing of all the authors;
+-adding a new author;
+-deleting an existing author and updating an existing author
+One window for CRUD operations on Book (title, description, author):
+-allows the viewing of all the books;
+-adding a new book - and assigning one of the existing authors;
+-deleting an existing book and updating an existing book
+One window for Reviews (book, score, comment):
+-allows the viewing of all the reviews;
+-adding a new review for one of the existing books

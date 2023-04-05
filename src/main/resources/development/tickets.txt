@@ -2,7 +2,7 @@ Done BMS-1 Setup Hibernate
 Done BMS-2 Setup utility class
 Done BMS-3 Create Hibernate Model
 Done BMS-4 Create Infrastructure for user Menu
-BMS-5 Create abstract and generic repository
+Done BMS-5 Create abstract and generic repository
 
 BMS-6 -As a user, I should be able to add a new Author into the system;
     I should be able to specify the following data:

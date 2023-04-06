@@ -94,7 +94,7 @@ public class BaseRepositoryImpl<T> implements BaseRepository<T> {
     public List<T> findAll() {
         try (Session session = SessionManager.getSessionFactory().openSession()){
             Query<T> query = session.createQuery(
-                    "from Book" + entityClass.getSimpleName(), entityClass
+                    "from " + entityClass.getSimpleName(), entityClass
             );
             return query.list();
         }catch (Exception e){

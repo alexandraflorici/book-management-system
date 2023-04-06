@@ -37,8 +37,9 @@ public class Main {
                     break;
                 case VIEW_ALL_AUTHORS:
                     authorController.displayAll();
+                    break;
                 case UPDATE_AUTHOR:
-                    System.out.println("Not implemented");
+                    authorController.update();
                     break;
                 case DELETE_AUTHOR:
                     authorController.deleteById();

@@ -19,7 +19,7 @@ Done BMS-8 -As user, I should be able to delete an author from the list of autho
         -id of the author should be deleted; given data should be positive numeric value and different from 0
     If the provided author id does not exist in the system, the user will be prompted with a message
 
-BMS-9 -As user, I should be able to update authors existing on the system;
+Done BMS-9 -As user, I should be able to update authors existing on the system;
     I should be able to specify the following data:
           -id of the author should be updated; given data should be positive numeric value and different from 0
           - first name of the new author; given data should not be empty or blank or shouldn't contain digits

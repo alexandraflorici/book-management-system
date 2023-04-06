@@ -1,6 +1,9 @@
 package org.sda.bms;
 
+import org.sda.bms.controller.AuthorController;
 import org.sda.bms.controller.UserOption;
+import org.sda.bms.repository.AuthorRepositoryImpl;
+import org.sda.bms.service.AuthorServiceImpl;
 import org.sda.bms.utils.SessionManager;
 
 import java.util.Scanner;
@@ -11,6 +14,11 @@ public class Main {
 
         //Dependencies:
         Scanner scanner = new Scanner(System.in);
+        AuthorController authorController = new AuthorController(
+                new AuthorServiceImpl(new AuthorRepositoryImpl()),
+                scanner
+        );
+
         UserOption userOption = UserOption.UNKNOWN;
         while (userOption != UserOption.EXIT) {
             UserOption.printAllOptions();
@@ -19,11 +27,12 @@ public class Main {
             try {
                 int selectedOption = Integer.parseInt(scanner.nextLine().trim());
                 userOption = UserOption.findUserOption(selectedOption).orElse(UserOption.UNKNOWN);
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 userOption = UserOption.UNKNOWN;
             }
             switch (userOption) {
                 case CREATE_AUTHOR:
+                    authorController.create();
                     System.out.println("Not implemented");
                     break;
                 case UPDATE_AUTHOR:

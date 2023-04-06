@@ -4,7 +4,7 @@ Done BMS-3 Create Hibernate Model
 Done BMS-4 Create Infrastructure for user Menu
 Done BMS-5 Create abstract and generic repository
 
-BMS-6 -As a user, I should be able to add a new Author into the system;
+Done BMS-6 -As a user, I should be able to add a new Author into the system;
     I should be able to specify the following data:
         - first name of the new author; given data should not be empty or blank or shouldn't contain digits
         - last name of the new author; given data should not be empty or blank or shouldn't contain digits

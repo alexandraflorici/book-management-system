@@ -7,7 +7,8 @@ public enum UserOption {
     UPDATE_AUTHOR(2, "Update Author"),
     DELETE_AUTHOR(3, " Delete Author"),
     EXIT(99, "Exit"),
-    UNKNOWN(99999, "Unlnown");
+    UNKNOWN(99999, "Unlnown"),
+    VIEW_ALL_AUTHORS(4, "List all authors");
     private final int option;
     private final String displayName;
 

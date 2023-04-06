@@ -4,6 +4,7 @@ import org.sda.bms.model.Author;
 import org.sda.bms.repository.AuthorRepository;
 
 import java.util.IllegalFormatWidthException;
+import java.util.List;
 
 public class AuthorServiceImpl implements AuthorService{
     private static final String NAME_VALIDATION_REGEX = "^[a-zA-Z]+$";
@@ -38,5 +39,11 @@ public class AuthorServiceImpl implements AuthorService{
         }
         Author author = new Author(firstName, lastName);
         authorRepository.create(author);
+    }
+
+    @Override
+    public List<Author> findAll() {
+        return authorRepository.findAll();
+
     }
 }

@@ -35,6 +35,8 @@ public class Main {
                     authorController.create();
                     System.out.println("Not implemented");
                     break;
+                case VIEW_ALL_AUTHORS:
+                    authorController.displayAll();
                 case UPDATE_AUTHOR:
                     System.out.println("Not implemented");
                     break;

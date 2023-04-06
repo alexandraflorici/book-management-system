@@ -1,8 +1,11 @@
 package org.sda.bms.controller;
 
+import org.sda.bms.model.Author;
 import org.sda.bms.repository.exception.EntityCreationFailedException;
+import org.sda.bms.repository.exception.EntityFetchingFailedException;
 import org.sda.bms.service.AuthorService;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class AuthorController {
@@ -25,12 +28,29 @@ public class AuthorController {
 
             authorService.create(firstName, lastName);
             System.out.println("Author created successfully");
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-        }catch (EntityCreationFailedException e){
+        } catch (EntityCreationFailedException e) {
             System.err.println(e.getMessage());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Internal server error. Please contact your administrator.");
+        }
+    }
+
+    public void displayAll() {
+        try {
+            List<Author> existingAuthors = authorService.findAll();
+            for (Author author : existingAuthors) {
+                System.out.println(
+                        "Id: " + author.getId() +
+                                " First name: " + author.getFirstName() +
+                                " Last name: " + author.getLastName()
+                );
+            }
+        } catch (EntityFetchingFailedException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
     }
 }

@@ -10,7 +10,8 @@ public enum UserOption {
     UNKNOWN(99999, "Unknown"),
     VIEW_ALL_AUTHORS(4, "List all authors"),
     CREATE_BOOK(5, "Create Book"),
-    VIEW_ALL_BOOKS(6, "List all books");
+    VIEW_ALL_BOOKS(6, "List all books"),
+    VIEW_BOOK_BY_ID(7, "View book by id");
 
     private final int option;
     private final String displayName;

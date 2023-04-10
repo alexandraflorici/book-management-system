@@ -9,7 +9,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
 
@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService{
         }
 
         Optional<Author> authorOptional = authorRepository.findById(authorId);
-        if (authorOptional.isEmpty()){
+        if (authorOptional.isEmpty()) {
             throw new EntityNotFoundException("Author with provided id was not found in the system");
         }
         Author author = authorOptional.get();
@@ -49,5 +49,15 @@ public class BookServiceImpl implements BookService{
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
+    }
+
+    @Override
+    public Optional<Book> findById(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException(
+                    "Provided id is negative or 0. Provide a valid value."
+            );
+        }
+        return bookRepository.findById(id);
     }
 }

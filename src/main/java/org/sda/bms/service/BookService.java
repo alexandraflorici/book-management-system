@@ -8,4 +8,5 @@ public interface BookService {
     void create (String title,String description,int authorId);
     List<Book> findAll();
     Optional<Book> findById(int id );
+    void deleteById(int id);
 }

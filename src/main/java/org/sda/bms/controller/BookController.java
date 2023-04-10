@@ -2,6 +2,7 @@ package org.sda.bms.controller;
 
 import org.sda.bms.model.Book;
 import org.sda.bms.repository.exception.EntityCreationFailedException;
+import org.sda.bms.repository.exception.EntityDeleteFailedException;
 import org.sda.bms.repository.exception.EntityFetchingFailedException;
 import org.sda.bms.service.BookService;
 
@@ -111,5 +112,26 @@ public class BookController {
             result = result + " " + words[index];
         }
         return result;
+    }
+    public void deleteById(){
+        try {
+            System.out.println("Please provide book id: ");
+            int bookId = Integer.parseInt(scanner.nextLine().trim());
+
+            bookService.deleteById(bookId);
+            System.out.println("Book was successfully deleted");
+        }catch (NumberFormatException e){
+            System.err.println("Provided id is not a number. Provide a valid value.");
+        }catch (IllegalArgumentException e){
+            System.err.println(e.getMessage());
+        }catch (EntityFetchingFailedException e){
+            System.err.println(e.getMessage());
+        }catch (EntityDeleteFailedException e){
+            System.err.println(e.getMessage());
+        }catch (EntityNotFoundException e){
+            System.err.println(e.getMessage());
+        }catch (Exception e){
+            System.err.println("Internal server error. Please contact your administrator.");
+        }
     }
 }

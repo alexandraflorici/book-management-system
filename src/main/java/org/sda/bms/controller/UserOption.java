@@ -11,7 +11,8 @@ public enum UserOption {
     VIEW_ALL_AUTHORS(4, "List all authors"),
     CREATE_BOOK(5, "Create Book"),
     VIEW_ALL_BOOKS(6, "List all books"),
-    VIEW_BOOK_BY_ID(7, "View book by id");
+    VIEW_BOOK_BY_ID(7, "View book by id"),
+    DELETE_BOOK(8, "Delete book");
 
     private final int option;
     private final String displayName;

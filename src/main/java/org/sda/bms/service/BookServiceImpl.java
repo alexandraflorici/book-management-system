@@ -60,4 +60,23 @@ public class BookServiceImpl implements BookService {
         }
         return bookRepository.findById(id);
     }
+
+    @Override
+    public void deleteById(int id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException(
+                    "Provided id is negative or 0. Provide a valid value."
+            );
+        }
+
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        if (optionalBook.isEmpty()){
+            throw new EntityNotFoundException(
+                    "Book with provided id was not found in the system"
+            );
+        }
+
+        Book book = optionalBook.get();
+        bookRepository.delete(book);
+    }
 }

@@ -5,11 +5,12 @@ import java.util.Optional;
 public enum UserOption {
     CREATE_AUTHOR(1, "Create Author"),
     UPDATE_AUTHOR(2, "Update Author"),
-    DELETE_AUTHOR(3, " Delete Author"),
+    DELETE_AUTHOR(3, "Delete Author"),
     EXIT(99, "Exit"),
-    UNKNOWN(99999, "Unlnown"),
+    UNKNOWN(99999, "Unknown"),
     VIEW_ALL_AUTHORS(4, "List all authors"),
-    CREATE_BOOK(5, "Create Book");
+    CREATE_BOOK(5, "Create Book"),
+    VIEW_ALL_BOOKS(6, "List all books");
 
     private final int option;
     private final String displayName;

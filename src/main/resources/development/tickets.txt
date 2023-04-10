@@ -28,15 +28,15 @@ Done BMS-9 -As user, I should be able to update authors existing on the system;
 
 Done BMS-10 -As a user, I should be able to add a new Book into the system;
     I should be able to specify the following data:
-        - title of the new book; given data should not be empty or blank
+        - title of the new book; ![](../design/system-architecture-diagram.png)given data should not be empty or blank
         - description of the new book; given data should not be empty or blank
         - author id of the new book; given data should be positive numeric value and different from 0
     If the provided author id does not exist in the system, the user will be prompted with a message
     For any validation problem found, the user will be prompted with a message
 
-BMS-11 -As a user, I should be able to view the whole list of books existing in the system;
+Done BMS-11 -As a user, I should be able to view the whole list of books existing in the system;
     Each line will contain id of the book, title of the book, first name of the author and last name of the author;
-    If no author is found in the system, the user will be prompted with a message
+    If no book is found in the system, the user will be prompted with a message
 
 BMS-12 -As a user, I should be able to view all the details for a given book;
     I should be able to specify the following data:

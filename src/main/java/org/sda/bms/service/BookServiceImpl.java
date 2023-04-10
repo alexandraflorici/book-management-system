@@ -6,6 +6,7 @@ import org.sda.bms.repository.AuthorRepository;
 import org.sda.bms.repository.BookRepository;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 import java.util.Optional;
 
 public class BookServiceImpl implements BookService{
@@ -43,5 +44,10 @@ public class BookServiceImpl implements BookService{
         Book book = new Book(title, description);
         book.setAuthor(author);
         bookRepository.create(book);
+    }
+
+    @Override
+    public List<Book> findAll() {
+        return bookRepository.findAll();
     }
 }

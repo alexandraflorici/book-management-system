@@ -4,6 +4,7 @@ import org.sda.bms.model.Book;
 import org.sda.bms.repository.exception.EntityCreationFailedException;
 import org.sda.bms.repository.exception.EntityDeleteFailedException;
 import org.sda.bms.repository.exception.EntityFetchingFailedException;
+import org.sda.bms.repository.exception.EntityUpdateFailedException;
 import org.sda.bms.service.BookService;
 
 import javax.persistence.EntityNotFoundException;
@@ -89,48 +90,76 @@ public class BookController {
                 System.out.println("Author first name: " + book.getAuthor().getFirstName());
                 System.out.println("Author last name: " + book.getAuthor().getLastName());
             }
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.err.println("Provided id is not a number. Provide a valid value.");
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-        }catch (EntityFetchingFailedException e){
+        } catch (EntityFetchingFailedException e) {
             System.err.println(e.getMessage());
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println("Internal server error. Please contact your administrator.");
         }
     }
-    private static String formatBookDescription(String description){
+
+    private static String formatBookDescription(String description) {
         String result = "";
 
         final int maxNumberOfWords = 5;
         String[] words = description.split("  ");
 
-        for (int index = 0; index < words.length; index++){
-            if (index % maxNumberOfWords == 0){
+        for (int index = 0; index < words.length; index++) {
+            if (index % maxNumberOfWords == 0) {
                 result = result + "\n\t";
             }
             result = result + " " + words[index];
         }
         return result;
     }
-    public void deleteById(){
+
+    public void deleteById() {
         try {
             System.out.println("Please provide book id: ");
             int bookId = Integer.parseInt(scanner.nextLine().trim());
 
             bookService.deleteById(bookId);
             System.out.println("Book was successfully deleted");
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.err.println("Provided id is not a number. Provide a valid value.");
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        } catch (EntityFetchingFailedException e) {
+            System.err.println(e.getMessage());
+        } catch (EntityDeleteFailedException e) {
+            System.err.println(e.getMessage());
+        } catch (EntityNotFoundException e) {
+            System.err.println(e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Internal server error. Please contact your administrator.");
+        }
+    }
+
+    public void updateById() {
+        try {
+            System.out.println("Please provide book id: ");
+            int bookId = Integer.parseInt(scanner.nextLine().trim());
+            System.out.println("Please insert title: ");
+            String title = scanner.nextLine().trim();
+            System.out.println("Please insert description: ");
+            String description = scanner.nextLine().trim();
+
+            bookService.updateBYId(bookId, title, description);
+            System.out.println("Update Book successfully.");
+        }catch (NumberFormatException e){
+            System.out.println("Provided id is not a number. Provide a valid value.");
         }catch (IllegalArgumentException e){
+            System.err.println(e.getMessage());
+        }catch (EntityUpdateFailedException e){
             System.err.println(e.getMessage());
         }catch (EntityFetchingFailedException e){
             System.err.println(e.getMessage());
-        }catch (EntityDeleteFailedException e){
-            System.err.println(e.getMessage());
         }catch (EntityNotFoundException e){
             System.err.println(e.getMessage());
-        }catch (Exception e){
+        }catch (Exception e) {
             System.err.println("Internal server error. Please contact your administrator.");
         }
     }

@@ -66,6 +66,9 @@ public class Main {
                 case DELETE_BOOK:
                     bookController.deleteById();
                     break;
+                case UPDATE_BOOK:
+                    bookController.updateById();
+                    break;
                 case UNKNOWN:
                     System.out.println("please insert a valid option!!!! ");
                     break;
